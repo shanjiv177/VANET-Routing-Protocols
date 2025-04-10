@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+def options(ctx):
+    ctx.load('compiler_cxx')
+
+def configure(ctx):
+    ctx.load('compiler_cxx')
+    
+    # Add checks for NS3 libraries
+    ctx.check_cfg(package='nsnam', uselib_store='NS3', args=['--cflags', '--libs'])
+    
+    # You may need additional checks for SUMO if using direct API integration
+    # ctx.check_cfg(package='sumo', uselib_store='SUMO', args=['--cflags', '--libs'])
+
+def build(ctx):
+    ctx.program(
+        target='vanet-simulation',
+        source=[
+            'src/main.cc', 
+            'src/vanet-application.cc', 
+            'src/routing/aodv-implementation.cc', 
+            'src/routing/dsdv-implementation.cc', 
+            'src/routing/dsr-implementation.cc', 
+            'src/routing/gpsr-implementation.cc', 
+            'src/utils/mobility-helper.cc'
+        ],
+        includes=['src', 'src/routing', 'src/utils'],
+        use=['NS3'],  # Link with NS3 libraries
+    )
+
+def clean(ctx):
+    ctx.clean()

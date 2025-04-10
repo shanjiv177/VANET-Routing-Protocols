@@ -1,0 +1,6 @@
+<routes>
+    <route id="route0" edges="edge1 edge2 edge3" />
+    <route id="route1" edges="edge4 edge5 edge6" />
+    <route id="route2" edges="edge7 edge8 edge9" />
+    <route id="route3" edges="edge10 edge11 edge12" />
+</routes>

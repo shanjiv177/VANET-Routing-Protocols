@@ -1,0 +1,24 @@
+<networks>
+    <network id="city" name="City Scenario">
+        <edge id="1" from="1" to="2" priority="1" numLanes="2" speed="50"/>
+        <edge id="2" from="2" to="3" priority="1" numLanes="2" speed="50"/>
+        <edge id="3" from="3" to="4" priority="1" numLanes="2" speed="50"/>
+        <edge id="4" from="4" to="5" priority="1" numLanes="2" speed="50"/>
+        <edge id="5" from="5" to="6" priority="1" numLanes="2" speed="50"/>
+        <edge id="6" from="6" to="7" priority="1" numLanes="2" speed="50"/>
+        <edge id="7" from="7" to="8" priority="1" numLanes="2" speed="50"/>
+        <edge id="8" from="8" to="9" priority="1" numLanes="2" speed="50"/>
+        <edge id="9" from="9" to="10" priority="1" numLanes="2" speed="50"/>
+        
+        <junction id="1" x="0" y="0" type="traffic_light"/>
+        <junction id="2" x="100" y="0" type="traffic_light"/>
+        <junction id="3" x="200" y="0" type="traffic_light"/>
+        <junction id="4" x="300" y="0" type="traffic_light"/>
+        <junction id="5" x="400" y="0" type="traffic_light"/>
+        <junction id="6" x="500" y="0" type="traffic_light"/>
+        <junction id="7" x="600" y="0" type="traffic_light"/>
+        <junction id="8" x="700" y="0" type="traffic_light"/>
+        <junction id="9" x="800" y="0" type="traffic_light"/>
+        <junction id="10" x="900" y="0" type="traffic_light"/>
+    </network>
+</networks>

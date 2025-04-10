@@ -1,0 +1,14 @@
+<configuration>
+    <input>
+        <net-file>../maps/city-scenario.net.xml</net-file>
+        <route-files>../routes/traffic.rou.xml</route-files>
+    </input>
+    <time>
+        <begin>0</begin>
+        <end>3600</end>
+        <step-length>1.0</step-length>
+    </time>
+    <output>
+        <output-file>../results/visualizations/simulation-output.xml</output-file>
+    </output>
+</configuration>
