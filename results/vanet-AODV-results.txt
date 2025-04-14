@@ -1,0 +1,469 @@
+Flow 1 (10.1.1.1 -> 10.1.1.20)
+  Tx Packets: 100
+  Rx Packets: 36
+  Lost Packets: 65
+  Packet Delivery Ratio: 36%
+  Average Delay: 759.279 ms
+  Throughput: 3.14165 Kbps
+
+Flow 2 (10.1.1.11 -> 10.1.1.3)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 9.4195 ms
+  Throughput: 40.7665 Kbps
+
+Flow 3 (10.1.1.11 -> 10.1.1.20)
+  Tx Packets: 5
+  Rx Packets: 5
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.11678 ms
+  Throughput: 0.095219 Kbps
+
+Flow 4 (10.1.1.3 -> 10.1.1.11)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 7.29212 ms
+  Throughput: 32.9122 Kbps
+
+Flow 5 (10.1.1.3 -> 10.1.1.12)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 4.83452 ms
+  Throughput: 0.202847 Kbps
+
+Flow 6 (10.1.1.12 -> 10.1.1.19)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.76039 ms
+  Throughput: 0.186302 Kbps
+
+Flow 7 (10.1.1.19 -> 10.1.1.1)
+  Tx Packets: 3
+  Rx Packets: 3
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.23728 ms
+  Throughput: 0.121213 Kbps
+
+Flow 8 (10.1.1.11 -> 10.1.1.2)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 8.41647 ms
+  Throughput: 45.6249 Kbps
+
+Flow 10 (10.1.1.16 -> 10.1.1.20)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 4.32374 ms
+  Throughput: 0.374922 Kbps
+
+Flow 12 (10.1.1.2 -> 10.1.1.10)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 3.2711 ms
+  Throughput: 0.248882 Kbps
+
+Flow 13 (10.1.1.10 -> 10.1.1.7)
+  Tx Packets: 4
+  Rx Packets: 3
+  Lost Packets: 1
+  Packet Delivery Ratio: 75%
+  Average Delay: 1.61114 ms
+  Throughput: 0.24536 Kbps
+
+Flow 14 (10.1.1.7 -> 10.1.1.14)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.6799 ms
+  Throughput: 0.227948 Kbps
+
+Flow 15 (10.1.1.14 -> 10.1.1.5)
+  Tx Packets: 6
+  Rx Packets: 6
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.714534 ms
+  Throughput: 0.0997177 Kbps
+
+Flow 16 (10.1.1.5 -> 10.1.1.1)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.31648 ms
+  Throughput: 165.769 Kbps
+
+Flow 17 (10.1.1.5 -> 10.1.1.14)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.184617 ms
+  Throughput: 1733.32 Kbps
+
+Flow 18 (10.1.1.14 -> 10.1.1.7)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 1.51233 ms
+  Throughput: 211.594 Kbps
+
+Flow 19 (10.1.1.7 -> 10.1.1.10)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.184809 ms
+  Throughput: 1731.52 Kbps
+
+Flow 20 (10.1.1.10 -> 10.1.1.2)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.184301 ms
+  Throughput: 1736.29 Kbps
+
+Flow 21 (10.1.1.11 -> 10.1.1.13)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.39642 ms
+  Throughput: 0.174769 Kbps
+
+Flow 22 (10.1.1.13 -> 10.1.1.11)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.768391 ms
+  Throughput: 0.331345 Kbps
+
+Flow 23 (10.1.1.13 -> 10.1.1.10)
+  Tx Packets: 4
+  Rx Packets: 4
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 1.99127 ms
+  Throughput: 0.192748 Kbps
+
+Flow 24 (10.1.1.7 -> 10.1.1.6)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 9.33483 ms
+  Throughput: 41.1362 Kbps
+
+Flow 25 (10.1.1.6 -> 10.1.1.5)
+  Tx Packets: 4
+  Rx Packets: 4
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 4.17786 ms
+  Throughput: 0.0607769 Kbps
+
+Flow 26 (10.1.1.5 -> 10.1.1.3)
+  Tx Packets: 6
+  Rx Packets: 6
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.734339 ms
+  Throughput: 0.26845 Kbps
+
+Flow 27 (10.1.1.3 -> 10.1.1.1)
+  Tx Packets: 9
+  Rx Packets: 9
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.781086 ms
+  Throughput: 0.145619 Kbps
+
+Flow 28 (10.1.1.9 -> 10.1.1.11)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 7.07285 ms
+  Throughput: 54.2922 Kbps
+
+Flow 29 (10.1.1.9 -> 10.1.1.20)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.74459 ms
+  Throughput: 0.043289 Kbps
+
+Flow 30 (10.1.1.11 -> 10.1.1.9)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.41168 ms
+  Throughput: 99.5158 Kbps
+
+Flow 31 (10.1.1.10 -> 10.1.1.5)
+  Tx Packets: 3
+  Rx Packets: 3
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.65122 ms
+  Throughput: 0.061327 Kbps
+
+Flow 32 (10.1.1.15 -> 10.1.1.4)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 11.161 ms
+  Throughput: 0.0390335 Kbps
+
+Flow 33 (10.1.1.15 -> 10.1.1.20)
+  Tx Packets: 4
+  Rx Packets: 4
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.831806 ms
+  Throughput: 0.0731191 Kbps
+
+Flow 34 (10.1.1.4 -> 10.1.1.15)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.57347 ms
+  Throughput: 0.0346182 Kbps
+
+Flow 35 (10.1.1.4 -> 10.1.1.3)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 4.31022 ms
+  Throughput: 0.0439873 Kbps
+
+Flow 36 (10.1.1.5 -> 10.1.1.6)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 0.754687 ms
+  Throughput: 508.82 Kbps
+
+Flow 37 (10.1.1.10 -> 10.1.1.6)
+  Tx Packets: 3
+  Rx Packets: 3
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 3.84944 ms
+  Throughput: 0.0637776 Kbps
+
+Flow 38 (10.1.1.13 -> 10.1.1.6)
+  Tx Packets: 3
+  Rx Packets: 3
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 334.535 ms
+  Throughput: 0.0722597 Kbps
+
+Flow 39 (10.1.1.13 -> 10.1.1.5)
+  Tx Packets: 3
+  Rx Packets: 3
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 2.50435 ms
+  Throughput: 0.155183 Kbps
+
+Flow 40 (10.1.1.6 -> 10.1.1.10)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 10.2523 ms
+  Throughput: 23.4094 Kbps
+
+Flow 41 (10.1.1.6 -> 10.1.1.13)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 1.47757 ms
+  Throughput: 0.157576 Kbps
+
+Flow 43 (10.1.1.6 -> 10.1.1.4)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 16.5202 ms
+  Throughput: 23.2442 Kbps
+
+Flow 44 (10.1.1.12 -> 10.1.1.15)
+  Tx Packets: 5
+  Rx Packets: 4
+  Lost Packets: 0
+  Packet Delivery Ratio: 80%
+  Average Delay: 2.88519 ms
+  Throughput: 0.0936303 Kbps
+
+Flow 45 (10.1.1.12 -> 10.1.1.4)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 11.4394 ms
+  Throughput: 33.5682 Kbps
+
+Flow 46 (10.1.1.14 -> 10.1.1.15)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 10.8281 ms
+  Throughput: 29.9969 Kbps
+
+Flow 47 (10.1.1.14 -> 10.1.1.4)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 21.4121 ms
+  Throughput: 17.9337 Kbps
+
+Flow 48 (10.1.1.20 -> 10.1.1.15)
+  Tx Packets: 3
+  Rx Packets: 3
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 334.167 ms
+  Throughput: 0.0680732 Kbps
+
+Flow 51 (10.1.1.10 -> 10.1.1.4)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 16.0191 ms
+  Throughput: 23.9714 Kbps
+
+Flow 52 (10.1.1.3 -> 10.1.1.15)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 12.9768 ms
+  Throughput: 29.5912 Kbps
+
+Flow 53 (10.1.1.3 -> 10.1.1.4)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 1.37187 ms
+  Throughput: 279.909 Kbps
+
+Flow 54 (10.1.1.13 -> 10.1.1.4)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 12.1145 ms
+  Throughput: 31.6975 Kbps
+
+Flow 55 (10.1.1.5 -> 10.1.1.13)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 4.06934 ms
+  Throughput: 58.9776 Kbps
+
+Flow 56 (10.1.1.5 -> 10.1.1.15)
+  Tx Packets: 2
+  Rx Packets: 1
+  Lost Packets: 1
+  Packet Delivery Ratio: 50%
+  Average Delay: 9.21144 ms
+  Throughput: 41.6873 Kbps
+
+Flow 57 (10.1.1.15 -> 10.1.1.12)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 6.83613 ms
+  Throughput: 35.1076 Kbps
+
+Flow 58 (10.1.1.15 -> 10.1.1.3)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 5.22711 ms
+  Throughput: 45.9145 Kbps
+
+Flow 59 (10.1.1.15 -> 10.1.1.14)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 19.9729 ms
+  Throughput: 12.0163 Kbps
+
+Flow 61 (10.1.1.13 -> 10.1.1.14)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 978.513 ms
+  Throughput: 0.392432 Kbps
+
+Flow 62 (10.1.1.9 -> 10.1.1.12)
+  Tx Packets: 2
+  Rx Packets: 2
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 4.62163 ms
+  Throughput: 0.0704271 Kbps
+
+Flow 63 (10.1.1.9 -> 10.1.1.14)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 4.38366 ms
+  Throughput: 87.5981 Kbps
+
+Flow 64 (10.1.1.12 -> 10.1.1.9)
+  Tx Packets: 1
+  Rx Packets: 1
+  Lost Packets: 0
+  Packet Delivery Ratio: 100%
+  Average Delay: 7.4525 ms
+  Throughput: 32.204 Kbps
+
+===== Aggregate Statistics =====
+Total Throughput: 7215.87 Kbps
+Average Delay: 198.38 ms
+Packet Delivery Ratio: 69.8198%
+Packet Loss Ratio: 30.1802%

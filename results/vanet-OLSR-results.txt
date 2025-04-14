@@ -1,0 +1,13 @@
+Flow 1 (10.1.1.1 -> 10.1.1.20)
+  Tx Packets: 71
+  Rx Packets: 54
+  Lost Packets: 17
+  Packet Delivery Ratio: 76.0563%
+  Average Delay: 4.95902 ms
+  Throughput: 4.40144 Kbps
+
+===== Aggregate Statistics =====
+Total Throughput: 4.40144 Kbps
+Average Delay: 4.95902 ms
+Packet Delivery Ratio: 76.0563%
+Packet Loss Ratio: 23.9437%
