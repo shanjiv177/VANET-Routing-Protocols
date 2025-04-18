@@ -16,6 +16,7 @@
 #include "ns3/flow-monitor-module.h"
 #include "ns3/netanim-module.h"
 #include "ns3/config-store-module.h"
+#include "ns3/olsr-module.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -30,9 +31,9 @@ uint32_t numVehicles = 20;   // Reduced number of vehicles for stability
 uint32_t packetSize = 512;   // Smaller UDP packet size
 uint32_t numPackets = 100;   // Fewer packets to send
 uint32_t port = 9;           // Port number
-double simTime = 50.0;       // Shorter simulation time
-double dataStart = 20.0;      // Start time of data transmission
-double dataEnd = 45.0;       // End time of data transmission
+double simTime = 90.0;       // Shorter simulation time
+double dataStart = 30.0;     // Start time of data transmission
+double dataEnd = 120.0;       // End time of data transmission
 double roadLength = 1000.0;  // Road length in meters
 double nodeSpeed = 20.0;     // Node speed in m/s
 bool enableAnimation = true; // Whether to enable NetAnim output
@@ -43,7 +44,8 @@ std::string traceFile = "sumo-mobility.tcl"; // SUMO-generated mobility trace fi
 enum RoutingProtocol
 {
   AODV,
-  DSDV
+  DSDV,
+  OLSR
 };
 
 // Function to configure the routing protocol
@@ -60,13 +62,26 @@ void ConfigureRoutingProtocol(NodeContainer &nodes, RoutingProtocol protocol)
     std::cout << "Using AODV routing protocol" << std::endl;
     break;
   }
-  case DSDV: {
+  case DSDV:
+  {
     DsdvHelper dsdv;
     dsdv.Set("PeriodicUpdateInterval", TimeValue(Seconds(2.0))); // More frequent updates
     dsdv.Set("SettlingTime", TimeValue(Seconds(6.0)));           // Shorter settling time
     internet.SetRoutingHelper(dsdv);
     internet.Install(nodes);
     std::cout << "Using DSDV routing protocol" << std::endl;
+    break;
+  }
+  case OLSR:
+  {
+    OlsrHelper olsr;
+    // Configure OLSR parameters for VANET scenario
+    olsr.Set("HelloInterval", TimeValue(Seconds(1.0)));
+    olsr.Set("TcInterval", TimeValue(Seconds(3.0)));
+    olsr.Set("Willingness", EnumValue(7));
+    internet.SetRoutingHelper(olsr);
+    internet.Install(nodes);
+    std::cout << "Using OLSR routing protocol" << std::endl;
     break;
   }
   default:
@@ -329,17 +344,19 @@ void MonitorPerformance(Ptr<FlowMonitor> &flowMonitor, FlowMonitorHelper &flowHe
   outFile.close();
 }
 
-void PrintNodePositions(NodeContainer& nodes) {
+void PrintNodePositions(NodeContainer &nodes)
+{
   std::cout << "Node positions at " << Simulator::Now().GetSeconds() << "s:" << std::endl;
-  for (uint32_t i = 0; i < std::min(5u, nodes.GetN()); i++) {
+  for (uint32_t i = 0; i < std::min(5u, nodes.GetN()); i++)
+  {
     Ptr<MobilityModel> mobility = nodes.Get(i)->GetObject<MobilityModel>();
-    if (mobility) {
+    if (mobility)
+    {
       Vector pos = mobility->GetPosition();
       std::cout << "Node " << i << ": (" << pos.x << ", " << pos.y << ")" << std::endl;
     }
   }
 }
-
 
 void RunSimulation(RoutingProtocol protocol)
 {
@@ -356,8 +373,6 @@ void RunSimulation(RoutingProtocol protocol)
     NS_FATAL_ERROR("Need at least 2 vehicles for the simulation");
   }
 
-  
-
   // Configure mobility
   ConfigureVehicleMobility(nodes);
 
@@ -370,7 +385,8 @@ void RunSimulation(RoutingProtocol protocol)
   // Configure IP addressing
   Ipv4InterfaceContainer interfaces = ConfigureAddressing(nodes, devices);
 
-  if (useSumo) {
+  if (useSumo)
+  {
     Simulator::Schedule(Seconds(1.0), &PrintNodePositions, nodes);
   }
 
@@ -383,14 +399,30 @@ void RunSimulation(RoutingProtocol protocol)
 
   // Setup animation if enabled
   AnimationInterface *anim = nullptr; // Use raw pointer, not Ptr<>
-  std::string protocolName = (protocol == AODV ? "AODV" : "DSDV");
+  std::string protocolName;
+  std::string animFile;
+  switch (protocol)
+  {
+  case AODV:
+    protocolName = "AODV";
+    animFile = "vanet-animation-aodv.xml";
+    break;
+  case DSDV:
+    protocolName = "DSDV";
+    animFile = "vanet-animation-dsdv.xml";
+    break;
+  case OLSR:
+    protocolName = "OLSR";
+    animFile = "vanet-animation-olsr.xml";
+    break;
+  default:
+    protocolName = "Unknown";
+  }
 
   if (enableAnimation)
   {
     try
     {
-      std::string animFile = "vanet-animation-" +
-                             (protocol == AODV ? std::string("aodv") : std::string("dsdv")) + ".xml";
       anim = new AnimationInterface(animFile); // Direct constructor call
 
       if (anim)
@@ -435,7 +467,6 @@ void RunSimulation(RoutingProtocol protocol)
 
   Simulator::Destroy();
 }
-// ...existing code...
 
 int main(int argc, char *argv[])
 {
@@ -445,7 +476,7 @@ int main(int argc, char *argv[])
   cmd.AddValue("numVehicles", "Number of vehicles (minimum 2)", numVehicles);
   cmd.AddValue("simTime", "Simulation time in seconds", simTime);
   cmd.AddValue("packetSize", "Size of UDP packets", packetSize);
-  cmd.AddValue("protocol", "Routing protocol (1=AODV, 2=DSDV, 0=All)", protocolChoice);
+  cmd.AddValue("protocol", "Routing protocol (1=AODV, 2=DSDV, 3=OLSR 0=All)", protocolChoice);
   cmd.AddValue("animation", "Enable NetAnim output (0=off, 1=on)", enableAnimation);
   cmd.AddValue("useSumo", "Use SUMO mobility traces (0=off, 1=on)", useSumo);
   cmd.AddValue("traceFile", "SUMO mobility trace file path", traceFile);
@@ -486,6 +517,9 @@ int main(int argc, char *argv[])
     {
       RunSimulation(DSDV);
     }
+    else if (protocolChoice ==3) {
+      RunSimulation(OLSR);
+    }
     else
     {
       // Run all supported protocols
@@ -498,6 +532,11 @@ int main(int argc, char *argv[])
 
       std::cout << "=== Running simulation with DSDV ===" << std::endl;
       RunSimulation(DSDV);
+
+      std::cout << "\n" << std::endl;
+      
+      std::cout << "=== Running simulation with OLSR ===" << std::endl;
+      RunSimulation(OLSR);
     }
 
     return 0;
