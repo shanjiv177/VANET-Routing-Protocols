@@ -33,7 +33,7 @@ uint32_t numPackets = 100;   // Fewer packets to send
 uint32_t port = 9;           // Port number
 double simTime = 90.0;       // Shorter simulation time
 double dataStart = 30.0;     // Start time of data transmission
-double dataEnd = 120.0;       // End time of data transmission
+double dataEnd = 120.0;      // End time of data transmission
 double roadLength = 1000.0;  // Road length in meters
 double nodeSpeed = 20.0;     // Node speed in m/s
 bool enableAnimation = true; // Whether to enable NetAnim output
@@ -185,24 +185,23 @@ void SetupTrafficApplication(NodeContainer &nodes, Ipv4InterfaceContainer &inter
     NS_FATAL_ERROR("Need at least 2 nodes for client-server communication");
   }
 
-  uint32_t sourceNode = 0;
-  uint32_t destNode = nodes.GetN() - 1;
+  for (uint32_t i = 0; i < numVehicles / 2; i++)
+  {
+    uint32_t sourceNode = i;
+    uint32_t destNode = (i + numVehicles / 2) % numVehicles; // Pair nodes
+    UdpClientHelper client(interfaces.GetAddress(destNode), port + i);
+    client.SetAttribute("MaxPackets", UintegerValue(numPackets));
+    client.SetAttribute("Interval", TimeValue(Seconds(0.5)));
+    client.SetAttribute("PacketSize", UintegerValue(packetSize));
+    ApplicationContainer clientApps = client.Install(nodes.Get(sourceNode));
+    clientApps.Start(Seconds(dataStart));
+    clientApps.Stop(Seconds(dataEnd));
 
-  // UDP client
-  UdpClientHelper client(interfaces.GetAddress(destNode), port);
-  client.SetAttribute("MaxPackets", UintegerValue(numPackets));
-  client.SetAttribute("Interval", TimeValue(Seconds(0.5))); // Send packet every 0.5 seconds
-  client.SetAttribute("PacketSize", UintegerValue(packetSize));
-
-  ApplicationContainer clientApps = client.Install(nodes.Get(sourceNode));
-  clientApps.Start(Seconds(dataStart));
-  clientApps.Stop(Seconds(dataEnd));
-
-  // UDP server
-  UdpServerHelper server(port);
-  ApplicationContainer serverApps = server.Install(nodes.Get(destNode));
-  serverApps.Start(Seconds(dataStart));
-  serverApps.Stop(Seconds(dataEnd));
+    UdpServerHelper server(port + i);
+    ApplicationContainer serverApps = server.Install(nodes.Get(destNode));
+    serverApps.Start(Seconds(dataStart));
+    serverApps.Stop(Seconds(dataEnd));
+  }
 }
 
 // Monitor performance metrics using FlowMonitor
@@ -517,7 +516,8 @@ int main(int argc, char *argv[])
     {
       RunSimulation(DSDV);
     }
-    else if (protocolChoice ==3) {
+    else if (protocolChoice == 3)
+    {
       RunSimulation(OLSR);
     }
     else
@@ -533,8 +533,9 @@ int main(int argc, char *argv[])
       std::cout << "=== Running simulation with DSDV ===" << std::endl;
       RunSimulation(DSDV);
 
-      std::cout << "\n" << std::endl;
-      
+      std::cout << "\n"
+                << std::endl;
+
       std::cout << "=== Running simulation with OLSR ===" << std::endl;
       RunSimulation(OLSR);
     }
