@@ -83,23 +83,6 @@ Key comparative analyses include:
 - Cross-protocol comparison of throughput, delay, and PDR
 - Performance variation with different vehicle densities
 
-## Project Structure
-
-- **scripts/**
-  - `vanet-routing-compare.cc`: Main simulation script
-  
-- **results/**
-  - Performance metric text files and visualizations for each protocol
-  
-- **final_results/**
-  - Comparative analysis graphs
-  
-- **simulations/**
-  - Animation files for NetAnim
-  
-- **sumo/**
-  - SUMO configuration and mobility trace files
-
 ## Running the Simulation
 
 To run the simulation with default parameters:
@@ -148,10 +131,36 @@ Available command-line parameters:
    - Aggregate statistics for overall performance comparison
    - Comprehensive logging to both console and files
 
-## Future Work
+-----------------------------------------------------------------
 
-- Integration with more realistic channel models
-- Evaluation of geographic routing protocols (GPSR, GeoDTN)
-- Impact of obstacle models on protocol performance
-- Scalability testing with larger vehicle densities
-- Implementation of VANET-specific metrics (connectivity duration, route stability)
+# Graphs
+
+## Protocol Comparison Graphs
+
+### Packet Delivery Ratio Comparison
+![Packet Delivery Ratio Comparison](./final_results/comparison_Packet_Delivery_Ratio_log_scale.png)
+
+### Average Delay Comparison
+![Average Delay Comparison](./final_results/comparison_Average_Delay_log_scale.png)
+
+### Throughput Comparison
+![Throughput Comparison](./final_results/comparison_Throughput_log_scale.png)
+
+## Individual Protocol Graphs
+
+### AODV Protocol Performance
+![AODV Packet Delivery Ratio](./results2/aodv_Packet_Delivery_Ratio_normal.png)
+![AODV Average Delay](./results2/aodv_Average_Delay_normal.png)
+![AODV Throughput](./results2/aodv_Throughput_normal.png)
+
+### DSDV Protocol Performance
+![DSDV Packet Delivery Ratio](./results2/dsdv_Packet_Delivery_Ratio_normal.png)
+![DSDV Average Delay](./results2/dsdv_Average_Delay_normal.png)
+![DSDV Throughput](./results2/dsdv_Throughput_normal.png)
+
+### OLSR Protocol Performance
+![OLSR Packet Delivery Ratio](./results2/olsr_Packet_Delivery_Ratio_normal.png)
+![OLSR Average Delay](./results2/olsr_Average_Delay_normal.png)
+![OLSR Throughput](./results2/olsr_Throughput_normal.png)
+
+
